@@ -200,10 +200,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-05-20 15:37:03 / 修改时间：18:05:44" itemprop="dateCreated datePublished" datetime="2020-05-20T15:37:03+08:00">2020-05-20</time>
+              <time title="创建时间：2020-05-20 15:37:03" itemprop="dateCreated datePublished" datetime="2020-05-20T15:37:03+08:00">2020-05-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-21 15:33:18" itemprop="dateModified" datetime="2020-05-21T15:33:18+08:00">2020-05-21</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -220,7 +226,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>985</span>
+              <span>1.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -239,7 +245,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>在上手react之前，一直拿vue与react进行比较，不管是框架本身还是其全家桶；一开始是从react基础开始的时候，并没有遇到什么困难，只是react多了jsx语法，其他并无差别，再后来开始研究redux的时候，也对比着vuex进行学习，但是后来，发现两者并不相同，但都遵循了单向数据流的模式，redux由 store 、action-creator、reducer 、actionType组成，当用户行为dispatch相应的action-creator的时候，把相应的动作行为传给reducer，reducer根据不同的type返回新的state；但是在vuex当中是不同的，vuex是由state、getter、mutations、action组成，若需更改state，需要使用mutaions来进行更改，也是唯一更改state的方式，而actions是需要提交mutations，让mutaions执行更改state的任务，其中mutations是同步的，而actions是异步的。两者在项目搭配使用的时候，效果相差很大。</p>
+          <p>在上手react之前，一直拿vue与react进行比较，不管是框架本身还是其全家桶；一开始是从react基础开始的时候，并没有遇到什么困难，表面上只是react多了jsx语法，还有亮点则是虚拟Dom树，再后来开始研究redux的时候，也对比着vuex进行学习，但是后来，发现两者并不相同，但都遵循了单向数据流的模式，redux由 store 、action、reducer 、actionType组成，当用户行为dispatch相应的action的时候，把相应的动作行为传给reducer，reducer根据不同的action type返回新的state；但是在vuex当中是不同的，vuex是由state、getter、mutations、action组成，若需更改state，需要使用mutaions来进行更改，也是唯一更改state的方式，而actions是需要提交mutations，让mutaions执行更改state的任务，其中mutations是同步的，而actions是异步的。两者在项目搭配使用的时候，效果相差很大。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/react/redux%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/#more" rel="contents">

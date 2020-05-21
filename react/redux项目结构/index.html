@@ -35,15 +35,15 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="在上手react之前，一直拿vue与react进行比较，不管是框架本身还是其全家桶；一开始是从react基础开始的时候，并没有遇到什么困难，只是react多了jsx语法，其他并无差别，再后来开始研究redux的时候，也对比着vuex进行学习，但是后来，发现两者并不相同，但都遵循了单向数据流的模式，redux由 store 、action-creator、reducer 、actionType组成，">
+  <meta name="description" content="在上手react之前，一直拿vue与react进行比较，不管是框架本身还是其全家桶；一开始是从react基础开始的时候，并没有遇到什么困难，表面上只是react多了jsx语法，还有亮点则是虚拟Dom树，再后来开始研究redux的时候，也对比着vuex进行学习，但是后来，发现两者并不相同，但都遵循了单向数据流的模式，redux由 store 、action、reducer 、actionType组成">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react与redux">
 <meta property="og:url" content="http://yoursite.com/react/redux%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/index.html">
 <meta property="og:site_name" content="LiamSpace">
-<meta property="og:description" content="在上手react之前，一直拿vue与react进行比较，不管是框架本身还是其全家桶；一开始是从react基础开始的时候，并没有遇到什么困难，只是react多了jsx语法，其他并无差别，再后来开始研究redux的时候，也对比着vuex进行学习，但是后来，发现两者并不相同，但都遵循了单向数据流的模式，redux由 store 、action-creator、reducer 、actionType组成，">
+<meta property="og:description" content="在上手react之前，一直拿vue与react进行比较，不管是框架本身还是其全家桶；一开始是从react基础开始的时候，并没有遇到什么困难，表面上只是react多了jsx语法，还有亮点则是虚拟Dom树，再后来开始研究redux的时候，也对比着vuex进行学习，但是后来，发现两者并不相同，但都遵循了单向数据流的模式，redux由 store 、action、reducer 、actionType组成">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-20T07:37:03.555Z">
-<meta property="article:modified_time" content="2020-05-20T10:05:44.908Z">
+<meta property="article:modified_time" content="2020-05-21T07:33:18.439Z">
 <meta property="article:author" content="liam">
 <meta name="twitter:card" content="summary">
 
@@ -202,10 +202,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-05-20 15:37:03 / 修改时间：18:05:44" itemprop="dateCreated datePublished" datetime="2020-05-20T15:37:03+08:00">2020-05-20</time>
+              <time title="创建时间：2020-05-20 15:37:03" itemprop="dateCreated datePublished" datetime="2020-05-20T15:37:03+08:00">2020-05-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-21 15:33:18" itemprop="dateModified" datetime="2020-05-21T15:33:18+08:00">2020-05-21</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -222,7 +228,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>985</span>
+              <span>1.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -241,12 +247,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>在上手react之前，一直拿vue与react进行比较，不管是框架本身还是其全家桶；一开始是从react基础开始的时候，并没有遇到什么困难，只是react多了jsx语法，其他并无差别，再后来开始研究redux的时候，也对比着vuex进行学习，但是后来，发现两者并不相同，但都遵循了单向数据流的模式，redux由 store 、action-creator、reducer 、actionType组成，当用户行为dispatch相应的action-creator的时候，把相应的动作行为传给reducer，reducer根据不同的type返回新的state；但是在vuex当中是不同的，vuex是由state、getter、mutations、action组成，若需更改state，需要使用mutaions来进行更改，也是唯一更改state的方式，而actions是需要提交mutations，让mutaions执行更改state的任务，其中mutations是同步的，而actions是异步的。两者在项目搭配使用的时候，效果相差很大。</p>
+        <p>在上手react之前，一直拿vue与react进行比较，不管是框架本身还是其全家桶；一开始是从react基础开始的时候，并没有遇到什么困难，表面上只是react多了jsx语法，还有亮点则是虚拟Dom树，再后来开始研究redux的时候，也对比着vuex进行学习，但是后来，发现两者并不相同，但都遵循了单向数据流的模式，redux由 store 、action、reducer 、actionType组成，当用户行为dispatch相应的action的时候，把相应的动作行为传给reducer，reducer根据不同的action type返回新的state；但是在vuex当中是不同的，vuex是由state、getter、mutations、action组成，若需更改state，需要使用mutaions来进行更改，也是唯一更改state的方式，而actions是需要提交mutations，让mutaions执行更改state的任务，其中mutations是同步的，而actions是异步的。两者在项目搭配使用的时候，效果相差很大。</p>
 <a id="more"></a>
-
-
-<p>在vue搭配vuex进行项目开发的时候，是分的很开的，耦合不太厉害，但是在react搭配redux进行项目开发的时候，耦合就很严重了，以至于不太习惯这种开发模式</p>
-<p>了解完redux基础概念以后，尝试向react项目当中添加redux，为了项目壮大以后的扩展性考虑，怎么组织redux结构呢？以下来进行梳理一下思路:</p>
+<p>其实不管是Vue还是react，两者都像是UI库，都只是负责渲染罢了，但是更突出的是react还是更胜一筹，凭借他的虚拟DOM树和diff算法等优秀实现。<br>vuex对应的vue的状态管理，在实际项目开发当中，管理是相对集中的，开发起来相当顺手（可能开发时间长了，顺手了）。redux对应的react的状态管理，在实际开发的时候，相对于组织起来不是特别顺手且很凌乱，没有vuex那样组织起来方便。</p>
+<p>了解完redux基础概念以后，尝试向react项目当中添加redux，为了项目壮大以后的扩展性考虑，怎么组织redux结构呢？以下来进行梳理一下react和redux的组合流程:</p>
 <blockquote>
 <p>首先安装redux</p>
 </blockquote>
